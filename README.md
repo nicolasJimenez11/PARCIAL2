@@ -113,3 +113,45 @@ GRAFICA DE MEMORIA USADA
 GRAFICA DE TIEMPO 
 
 ![GRAFICA2](PARCIAL2/IMAG/grafica2.png)
+
+
+**PUNTO 5**
+
+**Como ejecutar**
+
+PASO 1 
+
+```bash
+bison -d booleana.y
+```
+
+PASO 2
+
+```bash
+flex booleana.l
+```
+
+PASO 3
+
+```bash
+gcc -o calc_bool booleana.tab.c lex.yy.c
+```
+PASO 4
+
+```bash
+./calc_bool pruebas.txt
+```
+
+**DESCRIPCION DEL CODIGO**
+
+En este punto se  implementa una calculadora lógica mediante la integración de Flex y Bison, donde el primero actúa como analizador léxico para identificar tokens clave como valores booleanos y operadores, mientras que el segundo ejecuta un análisis sintáctico ascendente tipo LALR. El código destaca por su capacidad de gestionar jerarquías de operación, garantizando que la precedencia de operadores como NOT, AND y OR se respete estrictamente, incluso en expresiones complejas con paréntesis anidados. Además, el programa ofrece una gran versatilidad operativa al permitir tanto la interacción en tiempo real por consola como el procesamiento automatizado de archivos de texto, facilitando la validación masiva de expresiones lógicas en entornos de ingeniería.
+
+**ANALISIS**
+
+Se comprobó que la calculadora booleana procesa correctamente expresiones lógicas, incluso cuando son complejas. Los resultados obtenidos muestran que el parser no solo identifica bien los valores de verdad, sino que también respeta la precedencia de los operadores, evaluando primero las negaciones y los paréntesis antes que las operaciones AND y OR.
+
+Además, el uso de Bison permite que este proceso sea rápido y eficiente, ya que analiza la estructura de la expresión y calcula el resultado al mismo tiempo. En general, el programa funciona de manera correcta y confiable para evaluar expresiones booleanas.
+
+**EJECUCION EN CONSOLA**
+
+![FOTO5](PARCIAL2/IMAG/FOTO5.png)
